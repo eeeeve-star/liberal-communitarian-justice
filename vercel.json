@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/rawls-nozick", "destination": "/index.html" }
+  ]
+}
