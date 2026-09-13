@@ -463,21 +463,21 @@
     </div>
 
     <div class="sim">
-      <div class="sim-head"><span class="dot"></span><span class="t">소유권 이력 추적기 &mdash; 도윤이가 만든 가죽 팔찌, 지금 주인은 정당할까?</span></div>
+      <div class="sim-head"><span class="dot"></span><span class="t">소유권 이력 추적기 &mdash; 상혁이가 만든 가죽 팔찌, 지금 주인은 정당할까?</span></div>
       <div class="sim-body">
         <div class="step-progress"><span id="np1" class="on"></span><span id="np2"></span><span id="np3"></span></div>
 
         <div id="n-step0">
           <div class="sim-step-label">STEP 0 · 취득</div>
-          <p style="margin:0 0 16px;font-size:14.5px;color:var(--ink-soft);">도윤이가 재료를 사서, 자기 손으로 가죽 팔찌를 만들었습니다. → <b style="color:var(--ink)">노동을 들여 처음 만들었으므로, 도윤의 소유권은 정당합니다.</b></p>
+          <p style="margin:0 0 16px;font-size:14.5px;color:var(--ink-soft);">상혁이가 재료를 사서, 자기 손으로 가죽 팔찌를 만들었습니다. → <b style="color:var(--ink)">노동을 들여 처음 만들었으므로, 상혁의 소유권은 정당합니다.</b></p>
           <button class="btn" id="n-start">다음 이야기 보기 →</button>
         </div>
 
         <div id="n-step1" style="display:none">
-          <div class="sim-step-label">STEP 1 · 이전 &mdash; 도윤 → 학연</div>
+          <div class="sim-step-label">STEP 1 · 이전 &mdash; 상혁 → 학연</div>
           <div class="opt-list">
-            <button class="opt" data-n1="fair">학연이 도윤에게 정당한 값을 치르고 팔찌를 샀다</button>
-            <button class="opt" data-n1="theft">도윤이 잠깐 자리를 비운 사이, 학연이 팔찌를 몰래 가져갔다</button>
+            <button class="opt" data-n1="fair">학연이 상혁에게 정당한 값을 치르고 팔찌를 샀다</button>
+            <button class="opt" data-n1="theft">상혁이 잠깐 자리를 비운 사이, 학연이 팔찌를 몰래 가져갔다</button>
           </div>
         </div>
 
@@ -536,8 +536,8 @@
           </tr>
           <tr>
             <th class="rowlabel">30만 원 사례의 결론</th>
-            <td class="rc">최소한의 몫을 보장한 뒤 기여도를 반영 (시뮬레이터의 &lsquo;차등의 원칙&rsquo;에 가까움)</td>
-            <td class="nc">각자 기여한 만큼 정당하게 번 몫을 그대로 인정 (시뮬레이터의 &lsquo;기여 비례&rsquo;에 가까움)</td>
+            <td class="rc">모두에게 최소한의 몫을 먼저 보장하고, 남은 금액은 기여도에 따라 나눔<br><span style="font-size:12.5px;color:var(--ink-faint);">→ 시뮬레이터의 &lsquo;차등의 원칙&rsquo;과 같은 방식</span></td>
+            <td class="nc">기여한 만큼 정확히 비례해서 나눔<br><span style="font-size:12.5px;color:var(--ink-faint);">→ 시뮬레이터의 &lsquo;기여 비례&rsquo;와 같은 방식</span></td>
           </tr>
         </tbody>
       </table>
@@ -710,9 +710,9 @@
         '<button class="opt" data-n2="gift">학연이 택운에게 선물로 주었다</button>' +
         '<button class="opt" data-n2="stolen2">택운이 학연 몰래 팔찌를 가져갔다</button>';
     } else {
-      ctx.innerHTML = '학연은 <b style="color:var(--ink)">도윤 몰래 가져갔으므로</b>, 애초에 정당한 소유자가 아닙니다. 그런 학연이 택운에게 팔찌를 팔았습니다.';
+      ctx.innerHTML = '학연은 <b style="color:var(--ink)">상혁 몰래 가져갔으므로</b>, 애초에 정당한 소유자가 아닙니다. 그런 학연이 택운에게 팔찌를 팔았습니다.';
       opts.innerHTML =
-        '<button class="opt" data-n2="resell_known">택운은 이 팔찌가 원래 도윤 것을 훔친 것이라는 사실을 알면서도 샀다</button>' +
+        '<button class="opt" data-n2="resell_known">택운은 이 팔찌가 원래 상혁 것을 훔친 것이라는 사실을 알면서도 샀다</button>' +
         '<button class="opt" data-n2="resell_unknown">택운은 이 팔찌에 그런 사연이 있는 줄 전혀 모르고, 학연을 믿고 제값을 다 치르고 샀다</button>';
     }
     document.getElementById('n-step2').style.display = 'block';
@@ -729,16 +729,16 @@
 
     if(nState.step1 === 'fair' && nState.step2 === 'gift'){
       html = '<div class="head">✅ 택운의 소유권은 정당합니다 <span class="principle-tag">이전의 원칙 충족</span></div>' +
-        '<div>도윤 → 학연 → 택운, 모든 단계가 자유로운 의사에 따른 정당한 이전이었습니다. 팔찌를 몇 번 주고받았든, 각 단계가 정당했다면 지금의 소유 상태도 정당합니다.</div>';
+        '<div>상혁 → 학연 → 택운, 모든 단계가 자유로운 의사에 따른 정당한 이전이었습니다. 팔찌를 몇 번 주고받았든, 각 단계가 정당했다면 지금의 소유 상태도 정당합니다.</div>';
     } else if(nState.step1 === 'fair' && nState.step2 === 'stolen2'){
       html = '<div class="head">🚫 택운은 정당한 소유자가 아닙니다 <span class="principle-tag">교정의 원칙 적용</span></div>' +
         '<div>학연까지는 정당했지만, 택운이 몰래 가져간 순간 부당한 이전이 발생했습니다. 팔찌는 정당한 소유자였던 학연에게 돌려주어야 합니다.</div>';
     } else if(nState.step1 === 'theft' && nState.step2 === 'resell_known'){
       html = '<div class="head">🚫 택운도 정당한 소유자가 아닙니다 <span class="principle-tag">교정의 원칙 적용</span></div>' +
-        '<div>애초에 학연에게 소유권이 없었으니 팔 자격도 없었고, 택운은 그 사실을 알면서도 샀습니다. 최초의 정당한 소유자인 도윤에게 팔찌를 돌려주어야 합니다.</div>';
+        '<div>애초에 학연에게 소유권이 없었으니 팔 자격도 없었고, 택운은 그 사실을 알면서도 샀습니다. 최초의 정당한 소유자인 상혁에게 팔찌를 돌려주어야 합니다.</div>';
     } else { // theft + resell_unknown
       html = '<div class="head">🚫 택운이 몰랐어도 결론은 같습니다 <span class="principle-tag">교정의 원칙 적용</span></div>' +
-        '<div>학연이 애초에 정당한 소유자가 아니었기 때문에, 그가 넘긴 소유권 자체가 성립하지 않습니다. 택운이 사정을 몰랐던 것은 안타깝지만, 노직의 원칙에서는 <b style="color:var(--ink)">과정</b>이 전부이므로 팔찌는 도윤에게 돌아가야 합니다. (택운은 대신 학연에게 값을 물어달라고 요구할 수 있습니다.)</div>';
+        '<div>학연이 애초에 정당한 소유자가 아니었기 때문에, 그가 넘긴 소유권 자체가 성립하지 않습니다. 택운이 사정을 몰랐던 것은 안타깝지만, 노직의 원칙에서는 <b style="color:var(--ink)">과정</b>이 전부이므로 팔찌는 상혁에게 돌아가야 합니다. (택운은 대신 학연에게 값을 물어달라고 요구할 수 있습니다.)</div>';
     }
 
     end.innerHTML = html;
