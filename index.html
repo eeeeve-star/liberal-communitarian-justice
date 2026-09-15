@@ -324,6 +324,50 @@
   .who-pill.r{ background:var(--rawls-soft); color:var(--rawls-ink); }
   .who-pill.n{ background:var(--nozick-soft); color:var(--nozick-ink); }
 
+  /* ---------- recap flow diagram ---------- */
+  .fc-toppill{
+    display:block; margin:0 auto 4px; max-width:520px; text-align:center;
+    background:var(--surface); border:2px solid var(--ink); border-radius:999px;
+    padding:14px 20px; font-weight:700; font-size:15.5px;
+  }
+  .fc-arrows{ position:relative; height:38px; max-width:100%; margin:0 auto; }
+  .fc-arrows svg{ position:absolute; top:0; left:0; width:100%; height:100%; }
+
+  .fc-columns{ display:grid; grid-template-columns:1fr 1fr; gap:28px; position:relative; margin-top:4px; }
+  @media (max-width:720px){ .fc-columns{ grid-template-columns:1fr; } }
+  .fc-divider{ position:absolute; left:50%; top:0; bottom:56px; border-left:2px dashed var(--line-strong); }
+  @media (max-width:720px){ .fc-divider{ display:none; } }
+
+  .fc-colhead{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .fc-colhead .bar{ width:44px; height:3px; border-radius:2px; background:var(--accent); }
+  .fc-colhead h3{ font-size:17px; font-weight:700; margin:0; color:var(--accent-ink); white-space:nowrap; }
+  .fc-colhead .line{ flex:1; height:2px; background:var(--accent); }
+
+  .fc-step{ background:var(--surface); border-left:5px solid var(--accent); border-radius:12px; padding:14px 16px 16px; margin-bottom:4px; }
+  .fc-badge{ display:inline-block; font-family:'IBM Plex Mono','Gothic A1',monospace; font-size:11px; font-weight:700; color:var(--accent-ink); border:1.5px solid var(--accent); background:var(--surface); padding:3px 10px; border-radius:999px; margin-bottom:8px; }
+  .fc-step h4{ text-align:center; font-size:15.5px; font-weight:700; margin:0 0 6px; }
+  .fc-step p{ text-align:center; margin:0 0 4px; font-size:13px; }
+  .fc-step p.sub{ color:var(--ink-faint); font-size:12px; }
+
+  .fc-arrow-wrap{ display:flex; justify-content:center; margin:2px 0; }
+
+  .fc-subrow{ display:flex; gap:10px; margin:4px 0; }
+  .fc-subbox{ flex:1; background:var(--accent-soft); border-radius:10px; padding:11px 12px; text-align:center; }
+  .fc-subbox .k, .fc-fullbox .k{ font-weight:700; font-size:12.5px; margin-bottom:4px; }
+  .fc-subbox .v, .fc-fullbox .v{ font-size:11.5px; color:var(--ink); line-height:1.45; }
+  .fc-fullbox{ background:var(--accent-soft); border-radius:10px; padding:11px 12px; text-align:center; margin-bottom:4px; }
+
+  .fc-conclusion{ background:var(--accent-soft-2); border-radius:12px; padding:14px 16px; text-align:center; margin-top:4px; }
+  .fc-conclusion h4{ margin:0 0 6px; font-size:15px; font-weight:700; color:var(--accent-ink); }
+  .fc-conclusion p{ margin:0 0 3px; font-size:12.5px; color:var(--ink); }
+
+  .fc-summary{ margin-top:24px; background:var(--surface); border:2px solid var(--ink); border-radius:18px; padding:20px 28px; text-align:center; }
+  .fc-summary h3{ font-size:18px; font-weight:700; margin:0 0 12px; }
+  .fc-summary p{ margin:5px 0; font-size:14px; }
+  .fc-summary .r{ color:var(--rawls-ink); font-weight:600; }
+  .fc-summary .n{ color:var(--nozick-ink); font-weight:600; }
+  .fc-summary .common{ color:var(--ink-faint); font-size:12.5px; margin-top:10px; }
+
   footer{ margin-top:60px; padding-top:24px; border-top:1px solid var(--line); color:var(--ink-faint); font-size:12.5px; }
   footer .signature{
     font-family:'Gaegu', cursive;
@@ -347,6 +391,7 @@
       <a href="#nozick">노직</a>
       <a href="#compare">비교</a>
       <a href="#quiz">확인 퀴즈</a>
+      <a href="#recap">정리</a>
     </nav>
   </div>
 </div>
@@ -551,6 +596,126 @@
     <p>카드를 클릭하면 정답과 이유가 나옵니다. 예측해 본 뒤 확인해 보세요.</p>
 
     <div class="quiz-grid" id="quiz-grid"></div>
+  </section>
+
+  <!-- ================= RECAP FLOWCHART ================= -->
+  <section class="scene" id="recap">
+    <div class="eyebrow"><span class="num">5</span>정리</div>
+    <h2>흐름으로 다시 보기</h2>
+    <p>정의의 원칙이 만들어지는 과정을 처음부터 끝까지 한 번 더 따라가 봅니다.</p>
+
+    <span class="fc-toppill">자유주의: 개인의 자유와 권리를 무엇보다 중시함</span>
+    <div class="fc-arrows">
+      <svg viewBox="0 0 1000 38" preserveAspectRatio="none">
+        <path d="M 280 0 L 280 20 L 240 20 L 240 30" stroke="var(--ink-soft)" stroke-width="2" fill="none"/>
+        <polygon points="234,30 246,30 240,38" fill="var(--ink-soft)"/>
+        <path d="M 720 0 L 720 20 L 760 20 L 760 30" stroke="var(--ink-soft)" stroke-width="2" fill="none"/>
+        <polygon points="754,30 766,30 760,38" fill="var(--ink-soft)"/>
+      </svg>
+    </div>
+
+    <div class="fc-columns">
+      <div class="fc-divider"></div>
+
+      <div class="theme-r">
+        <div class="fc-colhead"><div class="bar"></div><h3>롤스 — 평등주의적 자유주의</h3><div class="line"></div></div>
+
+        <div class="fc-step">
+          <span class="fc-badge">STEP 1</span>
+          <h4>원초적 입장</h4>
+          <p>모두가 평등하고 자유로운 가상의 상황을 상상한다</p>
+          <p class="sub">이 상황에서 다 함께 공정한 규칙(정의의 원칙)을 정하기로 한다</p>
+        </div>
+        <div class="fc-arrow-wrap"><svg width="18" height="20"><path d="M9 0 V11" stroke="var(--accent)" stroke-width="2.5"/><polygon points="3,11 15,11 9,20" fill="var(--accent)"/></svg></div>
+
+        <div class="fc-step">
+          <span class="fc-badge">STEP 2</span>
+          <h4>무지의 베일</h4>
+          <p>자신의 사회적 지위, 재능, 재산을 모른다고 가정한다</p>
+          <p class="sub">누구도 자신에게만 유리하게 규칙을 정할 수 없으므로 공정성이 확보된다</p>
+        </div>
+        <div class="fc-arrow-wrap"><svg width="18" height="20"><path d="M9 0 V11" stroke="var(--accent)" stroke-width="2.5"/><polygon points="3,11 15,11 9,20" fill="var(--accent)"/></svg></div>
+
+        <div class="fc-step">
+          <span class="fc-badge">STEP 3</span>
+          <h4>정의의 두 원칙 도출</h4>
+        </div>
+        <div class="fc-arrow-wrap"><svg width="18" height="20"><path d="M9 0 V11" stroke="var(--accent)" stroke-width="2.5"/><polygon points="3,11 15,11 9,20" fill="var(--accent)"/></svg></div>
+
+        <div class="fc-subrow">
+          <div class="fc-subbox">
+            <div class="k">제1원칙</div>
+            <div class="v">평등한 자유의 원칙<br>모든 사람은 동등한 기본적 자유를 최대한 누린다</div>
+          </div>
+          <div class="fc-subbox">
+            <div class="k">제2원칙</div>
+            <div class="v">차등의 원칙: 최소 수혜자에게 최대 이익이 될 때만 불평등 허용<br>기회균등의 원칙: 직책과 지위는 모두에게 열려 있어야 함</div>
+          </div>
+        </div>
+        <div class="fc-arrow-wrap"><svg width="18" height="20"><path d="M9 0 V11" stroke="var(--accent)" stroke-width="2.5"/><polygon points="3,11 15,11 9,20" fill="var(--accent)"/></svg></div>
+
+        <div class="fc-conclusion">
+          <h4>결론: 공정으로서의 정의</h4>
+          <p>자유와 평등의 조화, 사회적 약자에 대한 배려를 중시한다</p>
+          <p>국가는 적극적으로 재분배 정책을 펴야 한다고 본다</p>
+        </div>
+      </div>
+
+      <div class="theme-n">
+        <div class="fc-colhead"><div class="bar"></div><h3>노직 — 자유 지상주의</h3><div class="line"></div></div>
+
+        <div class="fc-step">
+          <span class="fc-badge">STEP 1</span>
+          <h4>소유 권리의 강조</h4>
+          <p>정당하게 얻은 것이라면 그것은 온전히 개인의 소유이다</p>
+          <p class="sub">국가가 이를 함부로 가져가서는 안 된다고 본다</p>
+        </div>
+        <div class="fc-arrow-wrap"><svg width="18" height="20"><path d="M9 0 V11" stroke="var(--accent)" stroke-width="2.5"/><polygon points="3,11 15,11 9,20" fill="var(--accent)"/></svg></div>
+
+        <div class="fc-step">
+          <span class="fc-badge">STEP 2</span>
+          <h4>소유권의 정당성 판단</h4>
+          <p>취득과 이전 과정에 문제가 없었는지가 핵심이다</p>
+          <p class="sub">과정이 정당하다면 그 결과로 생긴 빈부 격차는 문제 삼지 않는다</p>
+        </div>
+        <div class="fc-arrow-wrap"><svg width="18" height="20"><path d="M9 0 V11" stroke="var(--accent)" stroke-width="2.5"/><polygon points="3,11 15,11 9,20" fill="var(--accent)"/></svg></div>
+
+        <div class="fc-step">
+          <span class="fc-badge">STEP 3</span>
+          <h4>소유권의 세 원칙 도출</h4>
+        </div>
+        <div class="fc-arrow-wrap"><svg width="18" height="20"><path d="M9 0 V11" stroke="var(--accent)" stroke-width="2.5"/><polygon points="3,11 15,11 9,20" fill="var(--accent)"/></svg></div>
+
+        <div class="fc-subrow">
+          <div class="fc-subbox">
+            <div class="k">취득의 원칙</div>
+            <div class="v">노동을 통해 정당하게 취득한 재화는 소유권이 인정된다</div>
+          </div>
+          <div class="fc-subbox">
+            <div class="k">이전의 원칙</div>
+            <div class="v">교환, 증여, 상속으로 정당하게 양도받은 것은 소유권이 인정된다</div>
+          </div>
+        </div>
+        <div class="fc-fullbox">
+          <div class="k">교정의 원칙</div>
+          <div class="v">취득과 이전 과정에 부정의가 있었다면 국가가 바로잡아야 한다</div>
+        </div>
+        <div class="fc-arrow-wrap"><svg width="18" height="20"><path d="M9 0 V11" stroke="var(--accent)" stroke-width="2.5"/><polygon points="3,11 15,11 9,20" fill="var(--accent)"/></svg></div>
+
+        <div class="fc-conclusion">
+          <h4>결론: 최소 국가</h4>
+          <p>국가의 역할은 개인의 소유권을 보호하는 데 그쳐야 한다</p>
+          <p>복지 제도와 같은 재분배 정책에는 반대한다</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fc-summary">
+      <h3>한눈에 비교하기</h3>
+      <p><span class="r">롤스</span> : 자유와 평등의 조화 → 사회적 약자를 위한 재분배에 찬성</p>
+      <p><span class="n">노직</span> : 자유와 소유권을 절대적으로 우선 → 국가의 재분배 정책에 반대</p>
+      <p class="common">공통점: 둘 다 자유주의로서 개인의 자유와 권리를 정의의 출발점으로 삼는다</p>
+    </div>
   </section>
 
   <footer>
